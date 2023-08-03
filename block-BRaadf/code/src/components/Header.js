@@ -1,7 +1,11 @@
-function Header({ isDarkMode }) {
+import { useContext } from "react";
+import { Context } from "../Context";
+
+function Header() {
+  let val = useContext(Context)
   return (
-    <h1 className={`heading ${isDarkMode ? "heading-dark" : "heading-light"}`}>
-      {isDarkMode ? "Dark Mode" : "Light Mode"}
+    <h1 className={`heading ${val ? "heading-dark" : "heading-light"}`}>
+      {val ? "Dark Mode" : "Light Mode"}
     </h1>
   );
 }
